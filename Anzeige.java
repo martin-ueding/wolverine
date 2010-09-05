@@ -156,8 +156,8 @@ public class Anzeige extends JPanel {
 			Gegner ge = (Gegner) it.next();
 
 			trans.setToIdentity();
-			trans.translate(ge.x*dpu-ox-dpu/2, ge.y*dpu-oy-dpu/2);
-			trans.rotate(ge.alpha, 50, 30);
+			trans.translate((ge.x)*dpu-ox-dpu/2, (ge.y)*dpu-oy-dpu/2);
+			trans.rotate(ge.alpha, dpu/2, dpu/2);
 
 
 			g.drawImage(imGegner, trans, io);

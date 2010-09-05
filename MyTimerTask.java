@@ -6,6 +6,8 @@ import javax.swing.JOptionPane;
 
 
 public class MyTimerTask extends TimerTask {
+	int iter = 0;
+
 	public void run () {
 		Wolverine.jack.move();
 
@@ -31,7 +33,13 @@ public class MyTimerTask extends TimerTask {
 				if (r.explodiert)
 					del = r;
 			}
+
+				for (Iterator<Gegner> it = Wolverine.gegner.iterator(); it.hasNext();) {
+					Gegner g = (Gegner) it.next();
+					g.interact();
+				}
 		}
+
 		catch (ConcurrentModificationException e) {
 		}
 
@@ -39,6 +47,8 @@ public class MyTimerTask extends TimerTask {
 
 		if (del != null)
 			Wolverine.raketen.remove(del);
+		
+		iter++;
 	}
 }
 
