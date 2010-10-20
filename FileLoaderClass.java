@@ -45,16 +45,10 @@ public class FileLoaderClass {
 			for (int i = 0; i < zeilen; i++) {
 				for (int j = 0; j < spalten; j++) {
 					level[j][i] = (char)text[i*(spalten+1)+j];
-					if (level[j][i] == 'S') {
-						Wolverine.jack = new Jack(j, i);
-						level[j][i] = '.';
-					}
-					if (level[j][i] == 'A') {
-						Wolverine.autos.add(new Auto(j, i));
-					}
-					if (level[j][i] == 'E') {
-						Wolverine.gegner.add(new Gegner(j, i));
-						level[j][i] = '.';
+					switch (level[j][i] {
+						case 'S': Wolverine.jack = new Jack(j, i); level[j][i] = '.'; break;
+						case 'A': Wolverine.autos.add(new Auto(j, i)); break;
+						case 'E': Wolverine.gegner.add(new Gegner(j, i)); level[j][i] = '.'; break;
 					}
 				}
 			}
