@@ -5,3 +5,5 @@ wolverinegame.jar:
 	javac Wolverine.java
 	jar cfm wolverinegame.jar manifest.txt *.class *.java img *.properties *.wol
 
+clean:
+	rm -rf *.class *.jar
